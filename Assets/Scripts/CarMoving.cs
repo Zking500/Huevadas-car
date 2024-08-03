@@ -16,7 +16,7 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float Aceleracion = 50f;
     public float VelocidadMAX = -800f;
     public float VelocidadMAXReversa = 600f;
-    public float tamañoYanta;
+    public float tamañoYanta = 0.283f;
     public bool Suelo = false;
     public Button botonAcelerar;
     public Button botonFrenar;

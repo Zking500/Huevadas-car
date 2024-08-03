@@ -3,19 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - jugador
   - Water
   - UI
   - Carretera jugador
-  - Carretera bots
-  - 
-  - 
-  - 
+  - Carretera bot 1
+  - Carretera bot 2
+  - Carretera bot 3
+  - Carretera bot 4
   - 
   - 
   - 
