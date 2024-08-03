@@ -10,13 +10,12 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     JointMotor2D YantaAdelante;
     JointMotor2D YantaAtras;
     public GameObject CamaraSeguimiento;
-
-    private float Desaceleracion = -400f;
     private float Gravedad = 9.8f;
     public float Angulo = 0;
+    public float Desaceleracion = 400f;
     public float Aceleracion = 500f;
-    public float VelocidadMAX = -800f;
-    public float VelocidadMAXReversa = 600f;
+    public float VelocidadMAX = 800f;
+    public float VelocidadMAXReversa = -600f;
     public float tamañoYanta;
     public bool Suelo = false;
     public Button botonAcelerar;
@@ -54,16 +53,27 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Angulo = transform.localEulerAngles.z;
 
         if (Angulo > 180) Angulo -= 180;
+
         if (Suelo)
         {
             if (acelerar)
             {
-                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - (Aceleracion - Gravedad * Mathf.PI * (Angulo / 180) * 80) * -1 * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
+                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed + Aceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
             }
             else if (frenar)
             {
-                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - (Desaceleracion - Gravedad * Mathf.PI * (Angulo / 180) * 80) * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
+                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - Desaceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
             }
+            else
+            {
+                // Sin acción, desacelera lentamente
+                YantaAtras.motorSpeed = Mathf.MoveTowards(YantaAtras.motorSpeed, 0, Desaceleracion * Time.deltaTime);
+            }
+        }
+        else
+        {
+            // Si no está en el suelo, desacelera lentamente
+            YantaAtras.motorSpeed = Mathf.MoveTowards(YantaAtras.motorSpeed, 0, Desaceleracion * Time.deltaTime);
         }
 
         YantaAdelante = YantaAtras;
