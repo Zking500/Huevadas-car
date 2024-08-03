@@ -58,7 +58,7 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             if (acelerar)
             {
-                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - (Aceleracion - Gravedad * Mathf.PI * (Angulo / 180) * 80) * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
+                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - (Aceleracion - Gravedad * Mathf.PI * (Angulo / 180) * 80) * -1 * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
             }
             else if (frenar)
             {

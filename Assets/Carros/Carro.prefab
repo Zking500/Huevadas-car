@@ -137,12 +137,12 @@ MonoBehaviour:
   VelocidadMAXReversa: 800
   "tama\xF1oYanta": 0.35
   Suelo: 0
+  botonAcelerar: {fileID: 8157298098790801582}
+  botonFrenar: {fileID: 5105374908466491324}
   TagSuelo:
     serializedVersion: 2
     m_Bits: 8
   yanta: {fileID: 3673229692091986481}
-  botonAcelerar: {fileID: 8157298098790801582}
-  botonFrenar: {fileID: 5105374908466491324}
 --- !u!1 &466494823125633723
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,11 +325,11 @@ RectTransform:
   - {fileID: 4192538637474087131}
   m_Father: {fileID: 5219005571107996822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: -139}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40, y: 28}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &8195653102763460928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -411,7 +411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1253415691924174347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3569325987453191159}
+        m_TargetAssemblyTypeName: CarMoving, Assembly-CSharp
+        m_MethodName: OnFrenarButtonUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1678937561919066083
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,11 +458,11 @@ RectTransform:
   - {fileID: 6610258538069782679}
   m_Father: {fileID: 5219005571107996822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261, y: -161}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -59, y: 33}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &7951894684430799914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -532,7 +544,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6534538973956984353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3569325987453191159}
+        m_TargetAssemblyTypeName: CarMoving, Assembly-CSharp
+        m_MethodName: OnAcelerarButtonUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3584102442889234492
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Adelante
+  m_text: Reversa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1606,7 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
