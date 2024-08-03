@@ -12,10 +12,10 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject CamaraSeguimiento;
     private float Gravedad = 9.8f;
     public float Angulo = 0;
-    public float Desaceleracion = 400f;
-    public float Aceleracion = 500f;
-    public float VelocidadMAX = 800f;
-    public float VelocidadMAXReversa = -600f;
+    public float Desaceleracion = 40f;
+    public float Aceleracion = 50f;
+    public float VelocidadMAX = -800f;
+    public float VelocidadMAXReversa = 600f;
     public float tamañoYanta;
     public bool Suelo = false;
     public Button botonAcelerar;
@@ -58,11 +58,11 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             if (acelerar)
             {
-                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed + Aceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
+                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - Aceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
             }
             else if (frenar)
             {
-                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed - Desaceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
+                YantaAtras.motorSpeed = Mathf.Clamp(YantaAtras.motorSpeed + Desaceleracion * Time.deltaTime, VelocidadMAX, VelocidadMAXReversa);
             }
             else
             {
@@ -77,7 +77,7 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         YantaAdelante = YantaAtras;
-
+        Debug.Log("Velocidada carro" + YantaAdelante.motorSpeed);
         union[0].motor = YantaAtras;
         union[1].motor = YantaAdelante;
     }

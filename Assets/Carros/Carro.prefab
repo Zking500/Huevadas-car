@@ -132,17 +132,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CamaraSeguimiento: {fileID: 6308882726820352932}
   Angulo: 0
-  Desaceleracion: 400
-  Aceleracion: 500
-  VelocidadMAX: 800
-  VelocidadMAXReversa: -600
-  "tama\xF1oYanta": 0.282
+  Desaceleracion: 200
+  Aceleracion: 250
+  VelocidadMAX: -8000
+  VelocidadMAXReversa: 6000
+  "tama\xF1oYanta": 0.3
   Suelo: 0
   botonAcelerar: {fileID: 8157298098790801582}
   botonFrenar: {fileID: 5105374908466491324}
   TagSuelo:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
   yanta: {fileID: 3673229692091986481}
 --- !u!1 &466494823125633723
 GameObject:
@@ -281,7 +281,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1ae5b32f6b7c6e54a8c277999f34eff1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -805,7 +805,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1ae5b32f6b7c6e54a8c277999f34eff1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
