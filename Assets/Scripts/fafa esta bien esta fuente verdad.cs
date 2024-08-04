@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Goal : MonoBehaviour
+public class Meta : MonoBehaviour
 {
     // Referencia al Canvas de perder
     public GameObject WinCanvas;
@@ -15,27 +15,26 @@ public class Goal : MonoBehaviour
         WinCanvas.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnTriggerEnter2D(Collider2D collision){
         // Si el objeto que colisiona tiene el tag "Player"
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // Gana el jugador, puedes mostrar un mensaje o realizar alguna acción
             WinCanvas.SetActive(true);
         }
         // Si el objeto que colisiona tiene el tag "Bot"
-        else if (other.CompareTag("Bot"))
+        else if (collision.gameObject.CompareTag("Bot"))
         {
             // Mostrar el Canvas de perder
             loseCanvas.SetActive(true);
             // Actualizar el Text con el nombre del objeto que ganó
-            winnerText.text = "El ganador es: " + other.gameObject.name;
+            winnerText.text = "El ganador es: " + collision.gameObject.name;
         }
     }
 
     // Método para reiniciar el escenario
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

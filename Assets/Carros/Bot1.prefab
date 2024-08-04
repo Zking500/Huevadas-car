@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 6541209971552183151}
   m_Layer: 7
   m_Name: Cuerpo
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

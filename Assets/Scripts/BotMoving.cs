@@ -19,8 +19,6 @@ public class BotMoving : MonoBehaviour
     public LayerMask TagSuelo;
     public Transform yanta;
 
-    private bool acelerar = false;
-    private bool frenar = false;
     private bool Decaveza = false;
 
     void Start()
@@ -48,26 +46,8 @@ public class BotMoving : MonoBehaviour
         }
 
         YantaAdelante = YantaAtras;
-        Debug.Log("Velocidada carro" + YantaAdelante.motorSpeed);
         union[0].motor = YantaAtras;
         union[1].motor = YantaAdelante;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("UpsideDownTrigger"))
-        {
-            Decaveza = true;
-            acelerar = false; // Stop accelerating if upside down
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("UpsideDownTrigger"))
-        {
-            Decaveza = false;
-        }
     }
 
     private void OnDrawGizmos()

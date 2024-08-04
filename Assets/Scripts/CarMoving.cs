@@ -77,7 +77,6 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         YantaAdelante = YantaAtras;
-        Debug.Log("Velocidada carro" + YantaAdelante.motorSpeed);
         union[0].motor = YantaAtras;
         union[1].motor = YantaAdelante;
     }
