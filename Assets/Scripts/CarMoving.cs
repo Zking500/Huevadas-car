@@ -29,15 +29,6 @@ public class CarMoving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Start()
     {
-        if (CamaraSeguimiento != null)
-        {
-            rotacionInicial = CamaraSeguimiento.transform.rotation;
-        }
-        else
-        {
-            Debug.LogWarning("CamaraSeguimiento no está asignado en el Inspector.");
-        }
-
         union = gameObject.GetComponents<WheelJoint2D>();
         YantaAdelante = union[0].motor;
         YantaAtras = union[1].motor;
